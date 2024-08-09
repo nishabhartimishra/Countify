@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countify - Smart Manufacturing</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-image: url('static/images/2_bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0, 77, 153, 0.9); /* Deeper blue with more opacity */
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        nav .nav-left {
+            display: flex;
+            align-items: center; /* Center-align items vertically */
+        }
+
+        nav .brand {
+            margin-right: 3%; /* Pushes the brand name to the right */
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #66ccff;  /* Bright yellow */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Darker shadow for emphasis */
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Unique font */
+        }
+
+        nav .brand span {
+            color: #ff6600; /* Bright orange for part of the text */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .brand-name {
+            position: absolute;
+            bottom: 15%; /* Positioned higher in the middle-bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffffff; /* White color */
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); /* Darker shadow for better readability */
+            z-index: 2;
+        }
+
+        .header-content {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            position: absolute;
+            bottom: 5%; /* Positioned just above the bottom of the header section */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #66ccff; /* Light blue */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Darker shadow for emphasis */
+            margin: 0 0 1.5rem 0;
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: #ff6600; /* Bright orange */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Darker shadow for better readability */
+
+        }
+
+        button {
+            background-color: #004d99; /* Deep blue */
+            border: none;
+            padding: 1rem 2rem;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #003366; /* Darker blue */
+        }
+
+        .content {
+            background: #f4f4f4; /* Light gray background */
+            color: #333; /* Dark gray text */
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 2.5rem; /* Larger font size */
+            font-weight: bold;
+            color: #004d99; /* Deep blue */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Adds a subtle shadow for a 3D effect */
+            letter-spacing: 1px; /* Adds space between letters for better readability */
+            background: linear-gradient(to right, #004d99, #66ccff); /* Gradient text */
+            -webkit-background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+
+        .content p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            height: 4px;
+            background: #ff6600; /* Bright orange highlight bar */
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .content p:hover::before {
+            transform: scaleX(1);
+            transform-origin: left.
+        }
+
+        footer {
+
+            background: #333; /* Dark gray background */
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Darker shadow for better readability */
+            text-align: center;
+            padding: 0.9rem 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="#">Home</a>
+                <a href="#">Smart Counting</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Logout</a>
+            </div>
+            <div class="brand">
+                Count<span>ify</span>
+            </div>
+        </nav>
+        <!-- Brand name positioned at the middle-bottom -->
+        <div class="header-content">
+            <h1>Connect with the Future of Smart Counting</h1>
+            <button onclick="window.location.href='/smart_counting'">Try Now</button>
+        </div>
+    </header>
+    <footer>
+        <p>&copy; 2024 Countify. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
