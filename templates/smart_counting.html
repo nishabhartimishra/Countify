@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Counting - Countify</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            background-color: #f4f4f4; /* Light gray background */
+            color: #333; /* Dark gray text */
+        }
+
+        header {
+            background: rgba(0, 77, 153, 0.8); /* Deep blue */
+            padding: 1rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-banner {
+            position: relative;
+            background-image: url('static/images/4_bg.jpeg'); /* Replace with the actual path */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .main-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner-content h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .banner-content p {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+         nav .brand {
+            margin-right: 1%; /* Pushes the brand name to the right */
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #66ccff;  /* Bright yellow */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Darker shadow for emphasis */
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Unique font */
+        }
+         nav .brand span {
+            color: #ff6600; /* Bright orange for part of the text */
+        }
+         .brand-name {
+            position: absolute;
+            bottom: 15%; /* Positioned higher in the middle-bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffffff; /* White color */
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); /* Darker shadow for better readability */
+            z-index: 2;
+        }
+
+        .upload-section {
+            position: relative;
+            z-index: 2;
+            background: #ffffff; /* White background for content section */
+            color: #333; /* Dark gray text */
+            padding: 2rem;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto; /* Centered and spaced from other content */
+            text-align: center;
+            margin-top: 2rem; /* Spacing between text and upload section */
+        }
+
+        .upload-section h2 {
+            font-size: 2rem;
+            color: #004d99; /* Deep blue */
+            margin-bottom: 1rem;
+        }
+
+        .upload-section input[type="file"] {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        .upload-section button {
+            background-color: #004d99; /* Deep blue */
+            border: none;
+            padding: 1rem 2rem;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .upload-section button:hover {
+            background-color: #003366; /* Darker blue */
+        }
+
+        .result {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #004d99; /* Deep blue */
+            margin-top: 1rem;
+        }
+
+        .content p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            height: 4px;
+            background: #ff6600; /* Bright orange highlight bar */
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        footer {
+            background: #333; /* Dark gray background */
+            color: white; /* White text */
+            text-align: center;
+            padding: 0.9rem 0;
+            font-size: 1rem; /* Match font size */
+        }
+         footer p {
+
+            bottom: -10px;
+            height: 5px;
+            font-size: 1.3rem;
+            color: #ff6600; /* Bright orange */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Darker shadow for better readability */
+            margin: 0 0 1.5rem 0;
+            text-align: center;
+            padding: 0.9rem 0;
+
+
+        }
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html">Home</a>
+                <a href="smart-counting.html">Smart Counting</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Logout</a>
+            </div>
+            <div class="brand">
+                Count<span>ify</span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-banner">
+        <div class="banner-content">
+            <h1>UNMATCHED EFFICIENCY</h1>
+            <p>UNRIVALED PERFORMANCE</p>
+        </div>
+
+        <div class="upload-section">
+            <h2>Upload Your Image</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="imageUpload" name="image" accept="image/*" required />
+                <button type="submit">Upload and Count Sheets</button>
+            </form>
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Countify. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = 'Counting sheets...';
+
+            fetch('/smart_counting', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                resultElement.textContent = 'Estimated sheet count: ' + data.count;
+            })
+            .catch(error => {
+                resultElement.textContent = 'An error occurred. Please try again.';
+            });
+        });
+    </script>
+
+</body>
+</html>
