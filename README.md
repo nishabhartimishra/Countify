@@ -32,17 +32,27 @@ Countify automates the process of counting sheets in a stack from images, helpin
 - NumPy
 - Pillow
 
-
 ## Installation
 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/nishabhartimishra/countify.git
    cd countify
+   
 2. **Set up a virtual environment:**
- ```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+
+4. **Run the application:**
+   ```bash
+   python app.py
+
+Access the application in your browser at http://127.0.0.1:5000.
 
 ## Usage
 
@@ -51,22 +61,19 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 3. The application will process the image and display the count of sheets.
 
 ## File Structure
-```bash
+
 countify/
 │
 ├── app.py                   # Main application file
-├── cnn_model.py           # Script to train the CNN model
-├── static/                  # images used for UI/UX
+├── cnn_model.py             # Script to train the CNN model
+├── static/                  # Images used for UI/UX
 ├── templates/               # HTML templates
 ├── sample_image/            # Directory for storing images
 ├── requirements.txt         # List of dependencies
 └── README.md                # Project documentation
 
 ## Contributing
-
 Contributions are welcome! Please fork this repository and submit a pull request for any feature additions or bug fixes.
 
 ## License
-
 This project is licensed under the MIT License.
-
