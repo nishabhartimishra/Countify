@@ -52,8 +52,6 @@ Countify automates the process of counting sheets in a stack from images, helpin
    ```bash
    python app.py
 
-Access the application in your browser at http://127.0.0.1:5000.
-
 ## Usage
 
 1. Open the application in your browser.
@@ -66,7 +64,7 @@ countify/
 │
 ├── app.py                   # Main application file
 ├── cnn_model.py             # Script to train the CNN model
-├── static/                  # Images used for UI/UX
+├── static/                  # Images used for UI
 ├── templates/               # HTML templates
 ├── sample_image/            # Directory for storing images
 ├── requirements.txt         # List of dependencies
