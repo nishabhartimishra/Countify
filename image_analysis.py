@@ -51,9 +51,6 @@ def find_and_filter_contours(dilated_edges, image_cv):
     return contours_image, len(filtered_contours)
 
 
-
-
-
 # Path to the folder containing the images
 folder_path = "sample_image"
 
